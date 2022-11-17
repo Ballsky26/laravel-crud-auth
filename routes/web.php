@@ -48,3 +48,7 @@ Route::post('/sesi/login', [SessionController::class, 'login'])->middleware('isT
 Route::get('/sesi/logout', [SessionController::class, 'logout']);
 Route::get('/sesi/register', [SessionController::class, 'register'])->middleware('isTamu');
 Route::post('/sesi/create', [SessionController::class, 'create'])->middleware('isTamu');
+
+Route::get('/', function () {
+    return view('sesi.welcome');
+})->middleware('isTamu');
